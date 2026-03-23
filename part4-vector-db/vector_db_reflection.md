@@ -1,0 +1,7 @@
+## Vector DB Use Case
+
+For a law firm navigating 500-page contracts, a traditional keyword-based database search would likely prove insufficient. Keyword searches rely on exact string matching or BM25 algorithms, which fail to account for "linguistic variation." In legal contexts, a lawyer might ask about "termination clauses," but the contract might use the term "Dissolution of Agreement" or "Period of Notice." A keyword search would miss these sections entirely if the specific word "termination" is absent, leading to incomplete or dangerously inaccurate legal reviews.
+
+This is where a Vector Database becomes essential. By converting contract segments into high-dimensional embeddings, the system captures the semantic intent behind the language. A vector database performs a "Nearest Neighbor" search in a latent space where concepts like "ending a contract," "cancellation," and "termination" are mathematically close to one another, regardless of the specific vocabulary used.
+
+In this system, the vector database acts as the retrieval engine. The 500-page documents would be "chunked" into smaller paragraphs, embedded, and stored. When a lawyer asks a question, the query is similarly embedded, and the database instantly retrieves the most contextually relevant chunks. This enables a Retrieval-Augmented Generation (RAG) workflow, where the system doesn't just find words, but understands the legal concepts being queried, significantly reducing the time required for due diligence.
