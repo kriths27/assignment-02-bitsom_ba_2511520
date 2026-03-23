@@ -2,7 +2,7 @@
 db.products.insertMany([
   { "product_id": "ELC-001", "name": "Quantum X15 Laptop", "category": "Electronics", "price": 85000, "specifications": { "voltage": "240V", "warranty_period": "2 years" } },
   { "product_id": "CLO-002", "name": "Classic Denim Jacket", "category": "Clothing", "price": 3500, "attributes": { "size": ["S", "M", "L"] } },
-  { "product_id": "GRO-003", "name": "Organic Almond Milk", "category": "Groceries", "price": 250, "details": { "expiry_date": "2027-12-15" } }
+  { "product_id": "GRO-003", "name": "Organic Almond", "category": "Groceries", "price": 250, "details": { "expiry_date": "2027-12-15" } }
 ]);
 
 // OP2: find() — retrieve all Electronics products with price > 20000
@@ -12,7 +12,7 @@ db.products.find({ "category": "Electronics", "price": { "$gt": 20000 } });
 db.products.find({ "category": "Groceries", "details.expiry_date": { "$lt": "2025-01-01" } });
 
 // OP4: updateOne() — add a "discount_percent" field to a specific product
-db.products.updateOne({ "product_id": "ELC-101" }, { "$set": { "discount_percent": 10 } });
+db.products.updateOne({ "product_id": "ELC-001" }, { "$set": { "discount_percent": 10 } });
 
 // OP5: createIndex() — create an index on category field and explain why
 db.products.createIndex({ "category": 1 });
